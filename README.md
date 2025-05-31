@@ -3,8 +3,15 @@
 A modular simulation that generates plausible DNA strand structures using trend-following stochastic modeling. This tool creates semi-random nucleotide positions that follow a general spatial trajectory, adding local noise to reflect real-world irregularity in folding behavior.
 
 ---
-
 ## 📖 Overview
+
+This project simulates DNA folding at the nanometer scale using a simplified model. Rather than performing a full physics-based simulation, the strand is generated through a combination of:
+- A global directional trend (e.g., linear or helical)
+- Local randomness to simulate thermal or structural noise
+
+This approach balances realism and performance, allowing the generation of diverse DNA conformations for visualization, concept testing, or educational use.
+
+## 🔬 Scientific Basis
 This simulator approximates DNA folding using simplified physical principles. It does not perform full molecular dynamics, but incorporates the following key interactions:
 
 - **Backbone Bonds as Springs**  
