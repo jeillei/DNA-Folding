@@ -1,6 +1,6 @@
 import numpy as np
 from utils import noise, rotational_steps
-from physics import spring, electro, apply_dihedral_force
+from physics import spring, electro, apply_dihedral_force, brownian
 
 class Base:
     def __init__(self, type, position):
@@ -94,3 +94,8 @@ class DNA:
         for strand in [self.strand1, self.strand2]:
             for i in range(len(strand.bases) - 3):
                 apply_dihedral_force(*strand.bases[i:i+4])
+    
+    def thermal_noise(self):
+        for strand in [self.strand1, self.strand2]:
+            for i in strand.bases:
+                brownian(i)

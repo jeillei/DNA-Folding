@@ -62,3 +62,7 @@ def apply_dihedral_force(a, b, c, d, k_dihedral=0.4, preferred_phi=np.pi / 5):
     b.force -= f_a * 0.5
     c.force -= f_d * 0.5
     d.force += f_d
+
+def brownian(base, strength= 0):
+    motion = np.random.normal(0, strength, size = 3)
+    base.force += motion

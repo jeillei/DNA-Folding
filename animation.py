@@ -4,7 +4,7 @@ import matplotlib.animation as animation
 from utils import update_pos
 from DNA import DNA
 
-def animate_dna(dna: DNA, steps=100, dt=0.03, save_path="outputs/dna_folding.mp4"):
+def animate_dna(dna: DNA, steps=100, dt=0.04, save_path="outputs/dna_folding.mp4"):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
 
@@ -28,6 +28,7 @@ def animate_dna(dna: DNA, steps=100, dt=0.03, save_path="outputs/dna_folding.mp4
         dna.compute_electrostatics()
         dna.stacking_forces()
         # dna.apply_dihedral_forces()
+        dna.thermal_noise()
 
         update_pos(dna.strand1.bases + dna.strand2.bases, dt=dt)
 
